@@ -17,20 +17,29 @@ Weapon.create(name: "+1 Dagger", min_damage: 3, max_damage: 4, armor_value: 0, a
 Weapon.create(name: "Hammer", min_damage: 1, max_damage: 6, armor_value: 0, attack_bonus: 0)
 Weapon.create(name: "+1 Axe", min_damage: 3, max_damage: 8, armor_value: 0, attack_bonus: 1)
 Weapon.create(name: "Bite", min_damage: 1, max_damage: 6, armor_value: 0, attack_bonus: 0)
+Weapon.create(name: "Greataxe", min_damage: 4, max_damage: 10, armor_value: 0, attack_bonus: 0)
+Weapon.create(name: "Bite", min_damage: 3, max_damage: 18, armor_value: 0, attack_bonus: 0)
+
 
 
 Monster.create(name: "Goblin", strength: 8, dexterity: 12, constitution: 8, hit_dice: 1, armor_value: 0, main_hand: Weapon.find_by(id: 5).name, exp_value: 3, gold: 2)
 Monster.create(name: "Kobold", strength: 6, dexterity: 10, constitution: 7, hit_dice: 1, armor_value: 1, main_hand: Weapon.find_by(id: 6).name, exp_value: 1, gold: 1)
 Monster.create(name: "Hobgoblin", strength: 14, dexterity: 10, constitution: 14, hit_dice: 1, armor_value: 1, main_hand: Weapon.find_by(id: 7).name, exp_value: 5, gold: 4)
+Monster.create(name: "Gnoll", strength: 12, dexterity: 14, constitution: 14, hit_dice: 1, armor_value: 1, main_hand: Weapon.find_by(id: 4).name, exp_value: 5, gold: 5)
+Monster.create(name: "Duergar", strength: 12, dexterity: 10, constitution: 16, hit_dice: 2, armor_value: 2, main_hand: Weapon.find_by(id: 17).name, exp_value: 5, gold: 6)
 Monster.create(name: "Ogre", strength: 18, dexterity: 8, constitution: 16, hit_dice: 4, armor_value: 3, main_hand: Weapon.find_by(id: 8).name, exp_value: 14, gold: 12)
 Monster.create(name: "Hill Giant", strength: 20, dexterity: 10, constitution: 18, hit_dice: 7, armor_value: 5, main_hand: Weapon.find_by(id: 9).name, exp_value: 24, gold: 16)
+Monster.create(name: "Minotaur", strength: 18, dexterity: 12, constitution: 16, hit_dice: 6, armor_value: 4, main_hand: Weapon.find_by(id: 20).name, exp_value: 18, gold: 14)
 Monster.create(name: "Hatchling Dragon", strength: 16, dexterity: 10, constitution: 16, hit_dice: 8, armor_value: 8, main_hand: Weapon.find_by(id: 10).name, exp_value: 32, gold: 24)
+Monster.create(name: "Roc", strength: 18, dexterity: 14, constitution: 16, hit_dice: 9, armor_value: 5, main_hand: Weapon.find_by(id: 21).name, exp_value: 30, gold: 16)
 Monster.create(name: "Bugbear", strength: 16, dexterity: 8, constitution: 16, hit_dice: 3, armor_value: 2, main_hand: Weapon.find_by(id: 13).name, exp_value: 9, gold: 8)
 Monster.create(name: "Direwolf", strength: 12, dexterity: 12, constitution: 14, hit_dice: 2, armor_value: 2, main_hand: Weapon.find_by(id: 19).name, exp_value: 7, gold: 5)
 
 
 Armor.create(name: "Cloth Armor", armor_value: 1)
 Armor.create(name: "Leather Armor", armor_value: 3)
+Armor.create(name: "Studded Leather", armor_value: 4)
 Armor.create(name: "Chainmail", armor_value: 5)
-Armor.create(name: "Plate Armor", armor_value: 7)
+Armor.create(name: "Plate Mail", armor_value: 6)
+Armor.create(name: "Half Plate", armor_value: 7)
 Armor.create(name: "Full Plate Armor", armor_value: 9)
