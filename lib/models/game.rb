@@ -111,7 +111,7 @@ class Game < ActiveRecord::Base
 		def town(character)
 			puts ""
 			puts ""
-			puts "You are milling about in town staring at your #{character.main_hand}"
+			puts "You are milling about in town, staring at your #{character.main_hand}"
 			puts ""
 			puts ""
 			puts "Your insatiable thirst for adventure compels you you leave. You can either travel to the Dungeon or visit the Temple."
@@ -282,7 +282,7 @@ class Game < ActiveRecord::Base
 					puts ""
 					puts "What's that?"
 					puts ""
-					adventure_one(character)
+					adventure_two(character)
 			end
 		end
 
@@ -327,8 +327,8 @@ class Game < ActiveRecord::Base
 				else
 					puts ""
 					puts "What's that?"
-					puts ""
-					adventure_one(character)
+					puts ""-
+					adventure_three(character)
 				end
 		end
 
@@ -612,108 +612,108 @@ class Game < ActiveRecord::Base
 		end
 
 		def adventure_seven(character)
-											#bugbear/direwolf
-											adv7 = rand(1..2)
-											case adv7
-											when 1
-												#direwolf
-												puts ""
-												puts ""
-												puts "You hear howling in the distance that seems to be getting closer and closer..."
-												puts ""
-												sleep (2)
-												puts "The beast finally catches up with you, it's a wolf the size of a horse... a DIREWOLF!!!"
-												puts "There's no way, you'll fight this thing... is there?"
-												puts ""
-												puts "    Yes  |  No"
-												answer = gets.chomp.downcase
+			#bugbear/direwolf
+			adv7 = rand(1..2)
+			case adv7
+			when 1
+				#direwolf
+				puts ""
+				puts ""
+				puts "You hear howling in the distance that seems to be getting closer and closer..."
+				puts ""
+				sleep (2)
+				puts "The beast finally catches up with you, it's a wolf the size of a horse... a DIREWOLF!!!"
+				puts "There's no way, you'll fight this thing... is there?"
+				puts ""
+				puts "    Yes  |  No"
+				answer = gets.chomp.downcase
 
-														case answer
-														when "yes", "y"
-															puts ""
-															puts "You decide to un-\"leash\" your rabid rage on this puppy and pound it into oblivion,"
-															puts "em-\"bark\"ing it on its journey to doggie heaven!"
-															puts ""
-															sleep(2)
-															puts "the fight begins"
-															sleep(0.5)
-															puts ""
-															Battle.fight_animation
-															Battle.fight_animation
-															Battle.fight_animation
-															monster_type = "Direwolf"
-															monster_type
+						case answer
+						when "yes", "y"
+							puts ""
+							puts "You decide to un-\"leash\" your rabid rage on this puppy and pound it into oblivion,"
+							puts "em-\"bark\"ing it on its journey to doggie heaven!"
+							puts ""
+							sleep(2)
+							puts "the fight begins"
+							sleep(0.5)
+							puts ""
+							Battle.fight_animation
+							Battle.fight_animation
+							Battle.fight_animation
+							monster_type = "Direwolf"
+							monster_type
 
-														when "no", "n"
-															system('clear')
-															puts ""
-															puts "That was a close call... You know deep in your heart you made the right move."
-															puts ""
-															sleep(3)
-															puts ""
-															puts "           -------------------"
-															puts "          |  Welcome to town  |"
-															puts "           -------------------"
-															puts ""
-															puts "The townsfolk are impressed you were able to escape from a Direwolf"
-															puts ""
-															puts "No one faults you for running, but a stronger warrior would have shown it \"who's a good boy\"."
-															character.character_sheet
-															character.update({status: 0})
-														else
-															puts ""
-															puts "What's that?"
-															puts ""
-															adventure_one(character)
-														end
-													when 2
-														# Bugbear
-														puts ""
-														puts ""
-														puts "You hear the sound of heavy footfalls. That's no Goblin, that's a BUGBEAR!"
-														puts "This thing is a head and a half taller than you, and has a huge club."
-														puts "There's no way, you'll fight this thing... is there?"
-														puts ""
-														puts "    Yes  |  No"
-														answer = gets.chomp.downcase
-															case answer
-															when "yes", "y"
-																puts ""
-																puts "This dungeon isn't big enough for the two of us!"
-																puts ""
-																sleep(2)
-																puts "the fight begins"
-																sleep(0.5)
-																puts ""
-																Battle.fight_animation
-																Battle.fight_animation
-																Battle.fight_animation
-																monster_type = "Bugbear"
-																monster_type
+						when "no", "n"
+							system('clear')
+							puts ""
+							puts "That was a close call... You know deep in your heart you made the right move."
+							puts ""
+							sleep(3)
+							puts ""
+							puts "           -------------------"
+							puts "          |  Welcome to town  |"
+							puts "           -------------------"
+							puts ""
+							puts "The townsfolk are impressed you were able to escape from a Direwolf"
+							puts ""
+							puts "No one faults you for running, but a stronger warrior would have shown it \"who's a good boy\"."
+							character.character_sheet
+							character.update({status: 0})
+						else
+							puts ""
+							puts "What's that?"
+							puts ""
+							adventure_seven(character)
+						end
+					when 2
+						# Bugbear
+						puts ""
+						puts ""
+						puts "You hear the sound of heavy footfalls. That's no Goblin, that's a BUGBEAR!"
+						puts "This thing is a head and a half taller than you, and has a huge club."
+						puts "There's no way, you'll fight this thing... is there?"
+						puts ""
+						puts "    Yes  |  No"
+						answer = gets.chomp.downcase
+							case answer
+							when "yes", "y"
+								puts ""
+								puts "This dungeon isn't big enough for the two of us!"
+								puts ""
+								sleep(2)
+								puts "the fight begins"
+								sleep(0.5)
+								puts ""
+								Battle.fight_animation
+								Battle.fight_animation
+								Battle.fight_animation
+								monster_type = "Bugbear"
+								monster_type
 
-															when "no", "n"
-																system('clear')
-																puts ""
-																puts "That was a close call... You know deep in your heart you made the right move."
-																puts ""
-																sleep(3)
-																puts ""
-																puts "           -------------------"
-																puts "          |  Welcome to town  |"
-																puts "           -------------------"
-																puts ""
-																puts "The townsfolk are impressed you were able to escape a Direwolf"
-																puts ""
-																puts "The townsfolk are impressed you faced a Bugbear and lived."
-																character.character_sheet
-																character.update({status: 0})
-															else
-																puts ""
-																puts "What's that?"
-																puts ""
-																adventure_one(character)
-															end
-														end
+							when "no", "n"
+								system('clear')
+								puts ""
+								puts "That was a close call... You know deep in your heart you made the right move."
+								puts ""
+								sleep(3)
+								puts ""
+								puts "           -------------------"
+								puts "          |  Welcome to town  |"
+								puts "           -------------------"
+								puts ""
+								puts "The townsfolk are impressed you were able to escape a Direwolf"
+								puts ""
+								puts "The townsfolk are impressed you faced a Bugbear and lived."
+								character.character_sheet
+								character.update({status: 0})
+							else
+								puts ""
+								puts "What's that?"
+								puts ""
+								adventure_seven(character)
+							end
+						end
 					end
 
 
@@ -763,7 +763,7 @@ class Game < ActiveRecord::Base
 					puts ""
 					puts "What's that?"
 					puts ""
-					adventure_one(character)
+					adventure_eight(character)
 				end
 		end
 
@@ -813,7 +813,7 @@ class Game < ActiveRecord::Base
 					puts ""
 					puts "What's that?"
 					puts ""
-					adventure_one(character)
+					adventure_nine(character)
 				end
 		end
 
@@ -866,7 +866,7 @@ class Game < ActiveRecord::Base
 					puts ""
 					puts "What's that?"
 					puts ""
-					adventure_one(character)
+					adventure_ten(character)
 				end
 		end
 

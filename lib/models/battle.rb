@@ -1,11 +1,4 @@
-class Battle # < ActiveRecord::Base
-	# belongs_to :character
-	# belongs_to :monster
-
-	#player_attack =rand main_hand.min_damage..main_hand.max_damage
-	#monster_attack
-
-	# character and monster are passed in
+class Battle
 
 	def self.attack_damage(attacker)
 			min_dam = Weapon.find_by(name:attacker.main_hand).min_damage
